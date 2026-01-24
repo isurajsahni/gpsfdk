@@ -43,7 +43,7 @@ function Navbar() {
                         onMouseEnter={() => setIsOpen(true)}
                         onMouseLeave={() => setIsOpen(false)}
                     >
-                        <button className="text-white hover:text-gpsfdk-orange font-medium flex items-center gap-1">
+                        <button className="text-white hover:text-gpsfdk-orange flex items-center gap-1">
                             Wall Canvas <span className="text-xs">▼</span>
                         </button>
 
@@ -52,7 +52,7 @@ function Navbar() {
 
                         {/* ✅ Mega Menu */}
                         {isOpen && (
-                            <div className="absolute left-0 top-full mt-4 w-[600px] bg-black shadow-lg border rounded-lg p-6 z-50">
+                            <div className="absolute left-0 top-full mt-4 w-[600px] bg-black shadow-lg border rounded-lg p-6 z-50 ">
                                 <div className="grid grid-cols-2 gap-10">
                                     {/* Left Column */}
                                     <div className="flex flex-col gap-4">
@@ -87,14 +87,14 @@ function Navbar() {
                     {/* Normal Links */}
                     <Link
                         to="#"
-                        className="text-white hover:text-gpsfdk-orange font-medium"
+                        className="text-white hover:text-gpsfdk-orange "
                     >
                         House Nameplates
                     </Link>
 
                     <Link
                         to="#"
-                        className="text-white hover:text-gpsfdk-orange font-medium"
+                        className="text-white hover:text-gpsfdk-orange "
                     >
                         Watch & Buy
                     </Link>
@@ -103,12 +103,12 @@ function Navbar() {
                 <div className="flex items-center space-x-4">
                     <Link
                         to="/profile"
-                        className="text-white hover:text-gpsfdk-orange font-medium"
+                        className="text-white hover:text-gpsfdk-orange "
                     >
-                        <HiOutlineUser className="w-5 h-5 text-white" />
+                        <HiOutlineUser className="w-5 h-5 text-white font-medium" />
                     </Link>
-                    <button className="text-white hover:text-gpsfdk-orange font-medium relative">
-                        <HiOutlineShoppingBag className="w-5 h-5 text-white" />
+                    <button className="text-white hover:text-gpsfdk-orange relative">
+                        <HiOutlineShoppingBag className="w-5 h-5 text-white font-medium" />
                         <span className="absolute -top-2 -right-2 bg-gpsfdk-orange text-white rounded-full py-0.5 px-1 flex items-center justify-center text-xs">2</span>
                     </button>
                     {/* Mobile Menu Button */}

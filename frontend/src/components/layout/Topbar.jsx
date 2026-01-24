@@ -2,8 +2,8 @@ import { TbBrandMeta } from "react-icons/tb";
 import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io5";
 const Topbar = () => {
   return (
-    <div className="bg-gpsfdk-orange text-white py-2 px-4">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
+    <div className="bg-gpsfdk-orange text-white">
+        <div className="flex justify-between items-center max-w-7xl mx-auto py-2 px-4">
             <div className='flex items-center space-x-4 hidden md:flex'>
            <a href="#" className="text-white hover:text-gray-300">
             <TbBrandMeta className="h-6 w-6" color="white"/> 
