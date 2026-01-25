@@ -1,14 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: [
+    "./public/index.html",
+    "./src/**/*.{js,jsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        "gpsfdk-orange": "#FF5722",
-        "gpsfdk-golden": "#CDAD7D",
-        "gpsfdk-green": "#02603F"
-      }
+        'gpsfdk-orange': '#ff5722',
+        'gpsfdk-green': '#02603f',
+        'gpsfdk-gold': '#CDAD7D',
+      },
     },
   },
   plugins: [],
-};
+}

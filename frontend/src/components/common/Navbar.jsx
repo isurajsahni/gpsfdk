@@ -44,7 +44,7 @@ function Navbar() {
                         onMouseLeave={() => setIsOpen(false)}
                     >
                         <button className="text-white hover:text-gpsfdk-orange flex items-center gap-1">
-                            Wall Canvas <span className="text-xs">▼</span>
+                            Wall Canvas <span className="text-xs">↴</span>
                         </button>
 
                         {/* ✅ Hover Bridge (so dropdown doesn't close while moving mouse down) */}
@@ -52,7 +52,7 @@ function Navbar() {
 
                         {/* ✅ Mega Menu */}
                         {isOpen && (
-                            <div className="absolute left-0 top-full mt-4 w-[600px] bg-black shadow-lg border rounded-lg p-6 z-50 ">
+                            <div className="absolute left-0 top-full mt-4 w-[500px] bg-black shadow-lg border rounded-lg p-6 z-50 ">
                                 <div className="grid grid-cols-2 gap-10">
                                     {/* Left Column */}
                                     <div className="flex flex-col gap-4">
