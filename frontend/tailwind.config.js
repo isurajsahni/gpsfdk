@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         'gpsfdk-orange': '#ff5722',
         'gpsfdk-green': '#02603f',
