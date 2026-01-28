@@ -8,7 +8,7 @@ export const Hero = () => {
 
       {/* ✅ Desktop / Tablet Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover hidden sm:block"
         autoPlay
         muted
         loop
@@ -19,7 +19,7 @@ export const Hero = () => {
 
       {/* ✅ Mobile Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover block md:hidden"
+        className="absolute inset-0 w-full h-full object-cover block sm:hidden"
         autoPlay
         muted
         loop

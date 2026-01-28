@@ -19,7 +19,7 @@ const Topbar = () => {
             <span>RIGHT TO LUXURY</span>
            </div>
            <div className="text-sm text-white text-center hidden md:block">
-            <a href="tel:+91 79797979797">+91 79797979797</a>
+            <a href="tel:+91 62803-10103">+91 62803-10103</a>
            </div>
         </div>
     </div>
