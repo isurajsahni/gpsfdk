@@ -46,11 +46,10 @@ const Navbar = () => {
     <nav className="w-full bg-black">
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
         {/* Logo */}
-        <div className="shrink-0">
+        <div className="shrink-0 flex items-center gap-8">
           <Link to="/">
             <img src={logo} alt="Logo" className="h-16 w-auto" />
           </Link>
-        </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
@@ -108,6 +107,8 @@ const Navbar = () => {
           <Link to="#" className="text-white hover:text-gpsfdk-orange">
             Watch & Buy
           </Link>
+        </div>
+
         </div>
 
         {/* Right Side Icons */}
@@ -170,7 +171,7 @@ const Navbar = () => {
 
       {/* ✅ Mega Menu inside Mobile */}
       {isMegaOpen && (
-        <div className="mt-4 grid grid-cols-2 gap-6">
+        <div className="mt-4 grid grid-cols-1 gap-6">
           {/* Left Column */}
           <div className="flex flex-col gap-3">
             {leftItems.map((item, index) => (

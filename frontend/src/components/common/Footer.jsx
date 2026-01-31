@@ -15,7 +15,7 @@ const Footer = () => {
                 <p className='text-gray-300 font-semibold'>Business Group & School Of Learning.</p>
             </div >
             <div className=''>
-                <ul className=' text-white flex gap-10 items-center justify-center '>
+                <ul className=' text-white flex gap-5 items-center justify-center flex-wrap '>
                     <li>
                         <Link to="#" className="hover:text-gpsfdk-orange">Contact us</Link>
                     </li>
@@ -51,10 +51,10 @@ const Footer = () => {
             
         </div>
         <div className='container border-t border-gpsfdk-gold py-8'>
-        <div className='max-w-7xl mx-auto px-2 text-white  text-center flex items-center justify-between gap-4'>
-            <Link to="mailto:customer@gpsfdk.com" className="hover:text-gpsfdk-orange">customer@gpsfdk.com</Link>
-            <p>© 2025 Business Group & School Of Learning <br /><span className='text-sm text-gray-300'>All rights reserved</span></p>
-             <Link to="tel:+91 62803-10103" className="text-white hover:text-gpsfdk-orange">+91 62803-10103</Link>
+        <div className='max-w-7xl mx-auto px-2 text-white  text-center flex items-center justify-between gap-4 flex-wrap '>
+            <Link to="mailto:customer@gpsfdk.com" className="hover:text-gpsfdk-orange text-center">customer@gpsfdk.com</Link>
+            <p className='text-center'>© 2025 Business Group & School Of Learning <br /><span className='text-sm text-gray-300'>All rights reserved</span></p>
+             <Link to="tel:+91 62803-10103" className="text-white hover:text-gpsfdk-orange text-center">+91 62803-10103</Link>
 </div>
 </div>
     </footer>
