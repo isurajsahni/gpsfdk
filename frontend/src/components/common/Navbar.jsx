@@ -72,26 +72,26 @@ const Navbar = () => {
                   {/* Left Column */}
                   <div className="flex flex-col gap-4">
                     {leftItems.map((item, index) => (
-                      <Link
+                      <button
                         key={index}
-                        to="#"
-                        className="text-white hover:text-gpsfdk-orange font-medium"
+                        type="button"
+                        className="text-white hover:text-gpsfdk-orange font-medium bg-transparent border-none cursor-pointer p-0 text-left"
                       >
                         {item}
-                      </Link>
+                      </button>
                     ))}
                   </div>
 
                   {/* Right Column */}
                   <div className="flex flex-col gap-4">
                     {rightItems.map((item, index) => (
-                      <Link
+                      <button
                         key={index}
-                        to="#"
-                        className="text-white hover:text-gpsfdk-orange font-medium"
+                        type="button"
+                        className="text-white hover:text-gpsfdk-orange font-medium bg-transparent border-none cursor-pointer p-0 text-left"
                       >
                         {item}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -100,13 +100,13 @@ const Navbar = () => {
           </div>
 
           {/* Normal Links */}
-          <Link to="#" className="text-white hover:text-gpsfdk-orange">
+          <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
             House Nameplates
-          </Link>
+          </button>
 
-          <Link to="#" className="text-white hover:text-gpsfdk-orange">
+          <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
             Watch & Buy
-          </Link>
+          </button>
         </div>
 
         </div>
@@ -175,28 +175,28 @@ const Navbar = () => {
           {/* Left Column */}
           <div className="flex flex-col gap-3">
             {leftItems.map((item, index) => (
-              <Link
+              <button
                 key={index}
-                to="#"
+                type="button"
                 onClick={toggleMobileMenu}
-                className="text-gray-700 hover:text-gpsfdk-orange font-medium"
+                className="text-gray-700 hover:text-gpsfdk-orange font-medium bg-transparent border-none cursor-pointer p-0 text-left"
               >
                 {item}
-              </Link>
+              </button>
             ))}
           </div>
 
           {/* Right Column */}
           <div className="flex flex-col gap-3">
             {rightItems.map((item, index) => (
-              <Link
+              <button
                 key={index}
-                to="#"
+                type="button"
                 onClick={toggleMobileMenu}
-                className="text-gray-700 hover:text-gpsfdk-orange font-medium"
+                className="text-gray-700 hover:text-gpsfdk-orange font-medium bg-transparent border-none cursor-pointer p-0 text-left"
               >
                 {item}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -204,21 +204,21 @@ const Navbar = () => {
     </div>
 
     {/* ✅ Other Links */}
-    <Link
-      to="#"
+    <button
+      type="button"
       onClick={toggleMobileMenu}
-      className="text-black font-semibold"
+      className="text-black font-semibold bg-transparent border-none cursor-pointer p-0 text-left"
     >
       House Nameplates
-    </Link>
+    </button>
 
-    <Link
-      to="#"
+    <button
+      type="button"
       onClick={toggleMobileMenu}
-      className="text-black font-semibold"
+      className="text-black font-semibold bg-transparent border-none cursor-pointer p-0 text-left"
     >
       Watch & Buy
-    </Link>
+    </button>
   </div>
 </div>
 

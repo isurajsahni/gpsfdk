@@ -20,25 +20,25 @@ const Footer = () => {
             <div className=''>
                 <ul className=' text-white flex gap-5 items-center justify-center flex-wrap '>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">Contact us</Link>
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">Contact us</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">About us</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">About us</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">Shipping & Delivery Policy</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">Shipping & Delivery Policy</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">CEO</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">CEO</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">FAQs</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">FAQs</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">Terms & Conditions</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">Terms & Conditions</button>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gpsfdk-orange">Privacy Policy</Link>  
+                        <button type="button" className="hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0 text-white font-normal">Privacy Policy</button>
                     </li>
                 </ul>
             </div>
@@ -55,9 +55,9 @@ const Footer = () => {
         </div>
         <div className='container border-t border-gpsfdk-gold py-8'>
         <div className='max-w-7xl mx-auto px-2 text-white  text-center flex items-center justify-between gap-4 flex-wrap '>
-            <Link to="mailto:customer@gpsfdk.com" className="hover:text-gpsfdk-orange text-center flex gap-1 items-center">  <MdEmail size={24} className='text-gpsfdk-gold'/>customer@gpsfdk.com</Link>
+            <a href="mailto:customer@gpsfdk.com" className="hover:text-gpsfdk-orange text-center flex gap-1 items-center">  <MdEmail size={24} className='text-gpsfdk-gold'/>customer@gpsfdk.com</a>
             <p className='text-center'>© 2025 Business Group & School Of Learning <br /><span className='text-sm text-gray-300'>All rights reserved</span></p>
-             <Link to="tel:+91 62803-10103" className="text-white hover:text-gpsfdk-orange flex gap-1 text-center items-center"><MdPhone size={24} className='text-gpsfdk-gold'/>+91 62803-10103</Link>
+             <a href="tel:+916280310103" className="text-white hover:text-gpsfdk-orange flex gap-1 text-center items-center"><MdPhone size={24} className='text-gpsfdk-gold'/>+91 62803-10103</a>
 </div>
 </div>
     </footer>
