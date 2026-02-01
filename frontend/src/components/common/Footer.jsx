@@ -1,5 +1,4 @@
 import React from 'react'
-import { TbBrandMeta } from "react-icons/tb";
 import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io5";
 import logo from "../../assets/img/cropped-gpsfavicon-300x300.webp";
 import { Link } from 'react-router-dom';
@@ -45,12 +44,12 @@ const Footer = () => {
             </div>
 
              <div className='flex gap-4 mb-6 justify-center items-center mt-8'>
-                           <a href="#" className="text-white hover:text-gpsfdk-orange">
+                           <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
                             <IoLogoInstagram className="h-6 w-6 text-sm text-white" color="white"/> 
-                           </a>
-                           <a href="#" className="text-white hover:text-gpsfdk-orange">
+                           </button>
+                           <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
                             <IoLogoWhatsapp className="h-6 w-6" color="white"/> 
-                           </a>
+                           </button>
                 </div>
             
         </div>

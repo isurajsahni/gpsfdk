@@ -5,15 +5,15 @@ const Topbar = () => {
     <div className="bg-gpsfdk-orange text-white">
         <div className="flex justify-between items-center max-w-7xl mx-auto py-2 px-4">
             <div className='flex items-center space-x-4 hidden md:flex'>
-           <a href="#" className="text-white hover:text-gray-300">
+           <button type="button" className="text-white hover:text-gray-300 bg-transparent border-none cursor-pointer p-0">
             <TbBrandMeta className="h-6 w-6" color="white"/> 
-           </a>
-           <a href="#" className="text-white hover:text-gray-300">
+           </button>
+           <button type="button" className="text-white hover:text-gray-300 bg-transparent border-none cursor-pointer p-0">
             <IoLogoInstagram className="h-6 w-6" color="white"/> 
-           </a>
-           <a href="#" className="text-white hover:text-gray-300">
+           </button>
+           <button type="button" className="text-white hover:text-gray-300 bg-transparent border-none cursor-pointer p-0">
             <IoLogoWhatsapp className="h-6 w-6" color="white"/> 
-           </a>
+           </button>
            </div>
            <div className="text-sm text-center flex-grow">
             <span>RIGHT TO LUXURY</span>
