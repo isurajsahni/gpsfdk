@@ -6,7 +6,7 @@ import houseNameplateImg from "../../assets/img/housenameplate.png";
 export const WallCanvasSection = () => {
   return (
     <section className="py-20 bg-black">
-      <h2 className="text-center text-4xl mb-8 font-semibold text-gpsfdk-gold">Our Products</h2>
+      <h2 className="text-center mb-8 text-3xl md:text-5xl text-gpsfdk-gold font-semibold">Our Products</h2>
       {/* ✅ Controlled container */}
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-7">
         

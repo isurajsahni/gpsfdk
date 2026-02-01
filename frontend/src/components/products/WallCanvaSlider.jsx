@@ -158,7 +158,7 @@ const WallCanvaSlider = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-6 flex-wrap">
         <p className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold">Wall Canvas</p>
 
-        <button className="hidden sm:block group inline-flex items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
+        <button className="hidden sm:block group items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
           View All <span className="text-lg transition-transform group-hover:translate-x-1">›</span>
         </button>
       </div>
@@ -174,14 +174,14 @@ const WallCanvaSlider = () => {
           {wallCanvasFeatured.map((product) => (
             <div
               key={product._id}
-              className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[22%] snap-start group relative rounded-lg overflow-hidden hover:scale-[1.03] transition-transform"
+              className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[22%] snap-start group relative  overflow-hidden hover:scale-[1.10] transition-transform"
             >
               <img
                 src={product.image[0]?.url}
                 alt={product.image[0]?.altText || product.name}
                 className="w-full aspect-[2/3] object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/20 text-white p-8 rounded-b-lg h-full flex flex-row hover:bg-black/0">
+              <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-8 rounded-b-lg h-full flex flex-row hover:bg-black/0">
                 <Link
                   to={`/product/${product._id}`}
                   className="flex flex-col items-center justify-end w-full"
