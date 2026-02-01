@@ -3,6 +3,7 @@ import { Hero } from '../components/layout/Hero'
 import { WallCanvasSection } from '../components/products/WallCanvasSection'
 import { Banner } from '../components/products/Banner'
 import WallCanvaSlider from '../components/products/WallCanvaSlider'
+import HouseNamePlates from '../components/products/HouseNamePlates'
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <Banner />
       <WallCanvasSection />
       <WallCanvaSlider />
+      <HouseNamePlates />
     </div>
   )
 }
