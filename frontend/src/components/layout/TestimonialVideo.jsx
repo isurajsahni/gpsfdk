@@ -5,7 +5,7 @@ const testimonials = [
   {
     id: 1,
     name: "Harsh Bansal",
-    text: `Hello everyone! I got this nameplate made from GPS. I often visit Chandigarh, and there I saw some really unique designs... absolutely loved it!`,
+    text: `“Hello everyone! I got this nameplate made from GPS. I often visit Chandigarh, and there I saw some really unique designs. So, I contacted GPS to create something similar — and they actually made an even better version of what I had seen! I absolutely loved it, and the best part is, they got it ready in just one day. The nameplate is truly unique, durable, and premium. If you’re looking to give your home a special identity, I highly recommend getting in touch with GPS.”`,
     thumbnail:
       "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
     video:
@@ -14,7 +14,7 @@ const testimonials = [
   {
     id: 2,
     name: "Rahul Sharma",
-    text: `Amazing craftsmanship and super fast delivery. Highly recommended if you want premium looking house nameplates.`,
+    text: `“When we bought our own house a year and a half ago, we were excited to make it truly ours. We wanted a nameplate that was unique, not just the standard design everyone else has. That’s why we chose GPS. It has been quite a while now, and despite facing all kinds of weather conditions, the nameplate is still in superb condition. Nameplate lagwao, Pehchaan Banao.”`,
     thumbnail:
       "https://images.unsplash.com/photo-1599566150163-29194dcaad36",
     video:
@@ -36,7 +36,7 @@ const TestimonialVideo = () => {
 
   return (
     <section className="bg-black py-20 px-4 border-t border-gpsfdk-gold">
-    <div className="relative max-w-6xl mx-auto">
+    <div className="relative max-w-4xl mx-auto">
       
       {/* STACKED CARD EFFECT */}
       <div className="relative">
@@ -49,7 +49,7 @@ const TestimonialVideo = () => {
           {/* LEFT — VIDEO */}
           <div
             onClick={() => setOpen(true)}
-            className="relative w-full md:w-[340px] h-[380px] cursor-pointer group"
+            className="relative w-full md:w-[300px] h-[340px] cursor-pointer group"
           >
             <img
               src={item.thumbnail}
