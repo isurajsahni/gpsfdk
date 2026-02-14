@@ -3,16 +3,15 @@ import Footer from "../common/Footer";
 import { Outlet } from "react-router-dom";
 
 
-const UserLayout =() =>{
-    return <>{/* Header */}
-    <Header />
-    {/* Main Content */}
-    <main>
+const UserLayout = () => {
+  return (
+    <>
+      <Header />
+      <main>
         <Outlet />
-    </main>
-    {/* Footer */}
-   <Footer />
-    </>;
-    
+      </main>
+      <Footer />
+    </>
+  );
 };
 export default UserLayout;

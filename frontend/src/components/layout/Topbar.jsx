@@ -3,7 +3,7 @@ import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io5";
 const Topbar = () => {
   return (
     <div className="bg-gpsfdk-orange text-white">
-        <div className="flex justify-between items-center max-w-7xl mx-auto py-2 px-4">
+        <div className="flex justify-between items-center mx-auto py-2 px-4">
             <div className='flex items-center space-x-4 hidden md:flex'>
            <button type="button" className="text-white hover:text-gray-300 bg-transparent border-none cursor-pointer p-0">
             <TbBrandMeta className="h-6 w-6" color="white"/> 

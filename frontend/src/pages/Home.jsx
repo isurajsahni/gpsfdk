@@ -6,6 +6,7 @@ import WallCanvaSlider from '../components/products/WallCanvaSlider'
 import HouseNamePlates from '../components/products/HouseNamePlates'
 import { WhoWeAre } from '../components/layout/WhoWeAre'
 import TestimonialVideo from '../components/layout/TestimonialVideo'
+import { WatchSection } from '../components/layout/WatchSection'
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
       <WallCanvasSection />
       <WallCanvaSlider />
       <HouseNamePlates />
+      <WatchSection />
       <WhoWeAre />
       <TestimonialVideo />
     </div>

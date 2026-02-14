@@ -1,78 +1,24 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { productApi } from "../../services/api";
+import { sortProductImages } from "../../utils/sortProductImages";
 
 const WallCanvaSlider = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [wallCanvasFeatured, setWallCanvasFeatured] = useState([]);
   const isDragging = useRef(false);
   const hasDragged = useRef(false);
   const startX = useRef(0);
   const scrollLeftStart = useRef(0);
 
-  const wallCanvasFeatured = [
-  {
-    _id: 1,
-    name: "Canvas Print 1",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 1" }],
-    price: "$29.99",
-  },
-  {
-    _id: 2,
-    name: "Canvas Print 2",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 2" }],
-    price: "$29.99",
-  },
-  {
-    _id: 3,
-    name: "Canvas Print 3",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 3" }],
-    price: "$29.99",
-  },
-  {
-    _id: 4,
-    name: "Canvas Print 4",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 4" }],
-    price: "$29.99",
-  },
-  {
-    _id: 5,
-    name: "Canvas Print 5",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 5" }],
-    price: "$29.99",
-  },
-  {
-    _id: 6,
-    name: "Canvas Print 6",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 6" }],
-    price: "$29.99",
-  },
-  {
-    _id: 7,
-    name: "Canvas Print 7",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 7" }],
-    price: "$29.99",
-  },
-  {
-    _id: 8,
-    name: "Canvas Print 8",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 8" }],
-    price: "$29.99",
-  },
-  {
-    _id: 9,
-    name: "Canvas Print 9",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 9" }],
-    price: "$29.99",
-  },
-  {
-    _id: 10,
-    name: "Canvas Print 10",
-    image: [{ url: "https://picsum.photos/400/600", altText: "Canvas Print 10" }],
-    price: "$29.99",
-  },
-];
+  useEffect(() => {
+    productApi.getProducts({ category: "wall-canvas", limit: 12 }).then((r) => {
+      setWallCanvasFeatured(r.products || []);
+    }).catch(() => setWallCanvasFeatured([]));
+  }, []);
 
   const updateScrollButtons = useCallback(() => {
     const el = scrollRef.current;
@@ -158,9 +104,9 @@ const WallCanvaSlider = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-6 flex-wrap">
         <p className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold">Wall Canvas</p>
 
-        <button className="hidden sm:block group items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
+        <Link to="/products/wall-canvas" className="hidden sm:block group items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
           View All <span className="text-lg transition-transform group-hover:translate-x-1">›</span>
-        </button>
+        </Link>
       </div>
 
       <div className="relative max-w-7xl mx-auto mt-4">
@@ -171,36 +117,42 @@ const WallCanvaSlider = () => {
           onMouseLeave={handleMouseLeave}
           style={{ scrollBehavior: "smooth" }}
         >
-          {wallCanvasFeatured.map((product) => (
-            <div
-              key={product._id}
-              className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[22%] snap-start group relative  overflow-hidden hover:scale-[1.10] transition-transform"
-            >
-              <img
-                src={product.image[0]?.url}
-                alt={product.image[0]?.altText || product.name}
-                className="w-full aspect-[2/3] object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-8 rounded-b-lg h-full flex flex-row hover:bg-black/0">
-                <Link
-                  to={`/product/${product._id}`}
-                  className="flex flex-col items-center justify-end w-full"
-                  onClick={(e) => hasDragged.current && e.preventDefault()}
-                >
-                  <h4 className="font-medium text-gpsfdk-gold text-lg">{product.name}</h4>
-                  <p className=" font-semibold">{product.price}</p>
-                  <div className="mt-2 inline-block bg-gpsfdk-orange hover:bg-gpsfdk-green py-2 px-8 text-center w-full">
-                    Shop Now
-                  </div>
-                </Link>
+          {wallCanvasFeatured.map((product) => {
+            const images = sortProductImages(product.images || []);
+            const firstImage = images[0];
+            const minPrice = Math.min(...(product.variations || []).map((v) => v.price), Infinity);
+            const priceStr = minPrice === Infinity ? "—" : `₹${minPrice}`;
+            return (
+              <div
+                key={product._id}
+                className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[22%] snap-start group relative overflow-hidden hover:scale-[1.10] transition-transform"
+              >
+                <img
+                  src={firstImage || "https://picsum.photos/400/600"}
+                  alt={product.name}
+                  className="w-full aspect-[2/3] object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-8 rounded-b-lg h-full flex flex-row hover:bg-black/0">
+                  <Link
+                    to={`/product/${product.slug || product._id}`}
+                    className="flex flex-col items-center justify-end w-full"
+                    onClick={(e) => hasDragged.current && e.preventDefault()}
+                  >
+                    <h4 className="font-medium text-gpsfdk-gold text-lg">{product.name}</h4>
+                    <p className="font-semibold">{priceStr}</p>
+                    <div className="mt-2 inline-block bg-gpsfdk-orange hover:bg-gpsfdk-green py-2 px-8 text-center w-full">
+                      Shop Now
+                    </div>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 <div className="flex relative items-center">
-   <button className="sm:hidden group inline-flex items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
+   <Link to="/products/wall-canvas" className="sm:hidden group inline-flex items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
           View All <span className="text-lg transition-transform group-hover:translate-x-1">›</span>
-        </button>
+        </Link>
 
         <div className="absolute right-0 sm:-bottom-10 flex gap-3">
           <button

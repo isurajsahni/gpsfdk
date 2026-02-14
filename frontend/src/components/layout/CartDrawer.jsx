@@ -28,8 +28,21 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
         
         {/* Cart Items */}
         <div className='p-4 bg-white sticky bottom-0'>
-          <button className='bg-gpsfdk-green py-2 px-6 font-semibold text-white w-full mb-4 hover:bg-gpsfdk-orange transition-all'>Check Out</button>
-          <p className='text-sm text-gray-500 text-center'>Shipping, Taxes and Discount codes calculated at checkout.</p>
+          <Link
+            to="/cart"
+            onClick={toggleCartDrawer}
+            className='block bg-gpsfdk-green py-2 px-6 font-semibold text-white w-full mb-2 hover:bg-gpsfdk-orange transition-all text-center'
+          >
+            View Cart
+          </Link>
+          <Link
+            to="/checkout"
+            onClick={toggleCartDrawer}
+            className='block bg-gpsfdk-orange py-2 px-6 font-semibold text-white w-full mb-4 hover:bg-gpsfdk-green transition-all text-center'
+          >
+            Check Out
+          </Link>
+          <p className='text-sm text-gray-500 text-center'>Shipping and discount codes calculated at checkout.</p>
         </div>
       
     </div>

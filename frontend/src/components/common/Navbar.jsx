@@ -10,11 +10,15 @@ import { IoMdClose } from "react-icons/io";
 
 import SearchBar from "./SearchBar";
 import CartDrawer from "../layout/CartDrawer";
+import { useAuth } from "../../context/AuthContext";
+import { useCart } from "../../context/CartContext";
 
 const Navbar = () => {
   const [isMegaOpen, setIsMegaOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const { totalItems } = useCart();
 
   const leftItems = [
     "Abstract Art",
@@ -44,7 +48,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-black">
-      <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
+      <div className=" mx-auto flex items-center justify-between py-2 px-4">
         {/* Logo */}
         <div className="shrink-0 flex items-center gap-8">
           <Link to="/">
@@ -100,32 +104,51 @@ const Navbar = () => {
           </div>
 
           {/* Normal Links */}
-          <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
+          <Link to="/products/house-nameplates" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
             House Nameplates
-          </button>
+          </Link>
 
-          <button type="button" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
+          <Link to="/products/watch-buy" className="text-white hover:text-gpsfdk-orange bg-transparent border-none cursor-pointer p-0">
             Watch & Buy
-          </button>
+          </Link>
+          {user?.role === 'admin' && (
+            <Link to="/admin" className="text-gpsfdk-gold hover:text-gpsfdk-orange">
+              Admin
+            </Link>
+          )}
         </div>
 
         </div>
 
         {/* Right Side Icons */}
         <div className="flex items-center gap-4">
-          <Link to="/profile" className="text-white hover:text-gpsfdk-orange">
-            <HiOutlineUser className="w-5 h-5" />
-          </Link>
-          
-          {/* Cart Button */}
+          {user ? (
+            <div className="relative group">
+              <Link to="/profile" className="text-white hover:text-gpsfdk-orange">
+                <HiOutlineUser className="w-5 h-5" />
+              </Link>
+              <div className="hidden group-hover:block absolute right-0 top-full mt-1 py-2 px-3 bg-black border border-white/20 rounded shadow z-50">
+                <p className="text-white text-sm">{user.name}</p>
+                <button type="button" onClick={logout} className="text-gpsfdk-orange text-sm hover:underline mt-1">
+                  Logout
+                </button>
+              </div>
+            </div>
+          ) : (
+            <Link to="/login" className="text-white hover:text-gpsfdk-orange">
+              <HiOutlineUser className="w-5 h-5" />
+            </Link>
+          )}
           <button
             onClick={toggleCartDrawer}
             className="text-white hover:text-gpsfdk-orange relative"
           >
             <HiOutlineShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-2 -right-2 bg-gpsfdk-orange text-white rounded-full py-0.5 px-1 flex items-center justify-center text-xs">
-              2
-            </span>
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-gpsfdk-orange text-white rounded-full py-0.5 px-1 flex items-center justify-center text-xs">
+                {totalItems}
+              </span>
+            )}
           </button>
    {/* Search */}
           <div className="overflow-hidden">
