@@ -8,6 +8,7 @@ import { WhoWeAre } from '../components/layout/WhoWeAre'
 import TestimonialVideo from '../components/layout/TestimonialVideo'
 import { WatchSection } from '../components/layout/WatchSection'
 import { ProductPage } from '../components/products/ProductPage'
+import { ProductPageNameplates } from '../components/products/ProductPageNameplates'
 
 export const Home = () => {
   return (
@@ -21,6 +22,7 @@ export const Home = () => {
       <WhoWeAre />
       <TestimonialVideo />
       <ProductPage />
+      <ProductPageNameplates />
     </div>
   )
 }
