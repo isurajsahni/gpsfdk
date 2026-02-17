@@ -8,7 +8,7 @@ import WatchVideo4 from "../../assets/videos/orderprocess2.mp4";
 export const WatchSection = () => {
   return (
     <section className='bg-black py-12 sm:py-20 px-4 border-t border-gpsfdk-gold'>
-      <h2 className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold text-center mb-9">Wall Canvas</h2>
+      <h2 className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold text-center mb-9">Watch & Buy</h2>
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto'>
       
       <div className='border border-gpsfdk-gold'>

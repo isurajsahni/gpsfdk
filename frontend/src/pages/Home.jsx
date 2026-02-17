@@ -7,6 +7,7 @@ import HouseNamePlates from '../components/products/HouseNamePlates'
 import { WhoWeAre } from '../components/layout/WhoWeAre'
 import TestimonialVideo from '../components/layout/TestimonialVideo'
 import { WatchSection } from '../components/layout/WatchSection'
+import { ProductPage } from '../components/products/ProductPage'
 
 export const Home = () => {
   return (
@@ -19,6 +20,7 @@ export const Home = () => {
       <WatchSection />
       <WhoWeAre />
       <TestimonialVideo />
+      <ProductPage />
     </div>
   )
 }
