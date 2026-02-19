@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-black">
-      <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
+      <div className="w-full mx-auto flex items-center justify-between py-2 px-4">
         {/* Logo */}
         <div className="shrink-0 flex items-center gap-8">
           <Link to="/">
