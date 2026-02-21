@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 export const ProductPageNameplates = () => {
-
   const SelectedProduct = {
     name: "Lord Ganesha",
     images: [
@@ -13,7 +13,6 @@ export const ProductPageNameplates = () => {
   };
 
   /* IMAGE SWITCH */
-
   const [activeImage, setActiveImage] = useState(
     SelectedProduct.images[0]
   );
@@ -23,7 +22,6 @@ export const ProductPageNameplates = () => {
     if (img === activeImage) return;
 
     setAnimateImage(true);
-
     setTimeout(() => {
       setActiveImage(img);
       setAnimateImage(false);
@@ -31,7 +29,6 @@ export const ProductPageNameplates = () => {
   };
 
   /* VARIATIONS */
-
   const variations = [
     { color: "Black & Gold", size: "15” Wide", price: 1999 },
     { color: "Black & Gold", size: "18” Wide", price: 2499 },
@@ -42,11 +39,34 @@ export const ProductPageNameplates = () => {
   const [selectedColor, setSelectedColor] = useState("Black & Gold");
   const [selectedSize, setSelectedSize] = useState("15” Wide");
 
-  const selectedVariation = variations.find(
-    (v) => v.color === selectedColor && v.size === selectedSize
-  );
+  const selectedVariation =
+    variations.find(
+      (v) => v.color === selectedColor && v.size === selectedSize
+    ) || variations[0];
 
+  /* CUSTOM NAME */
+  const [customName, setCustomName] = useState("");
+
+  /* QUANTITY */
   const [qty, setQty] = useState(1);
+
+  /* BUTTON STATE */
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddToCart = () => {
+    if (!customName.trim()) {
+      toast.error("Please enter your name", { duration: 3000 });
+      return;
+    }
+
+    setIsAdding(true);
+
+    // Simulate API/cart call
+    setTimeout(() => {
+      toast.success("Added to cart!", { duration: 3000 });
+      setIsAdding(false);
+    }, 600);
+  };
 
   return (
     <section className="bg-black min-h-screen py-16 px-4 text-white">
@@ -64,7 +84,6 @@ export const ProductPageNameplates = () => {
 
           {/* LEFT IMAGE */}
           <div>
-
             <div className="bg-[#111] rounded-3xl overflow-hidden shadow-2xl border border-gray-800">
               <img
                 src={activeImage}
@@ -77,12 +96,13 @@ export const ProductPageNameplates = () => {
               />
             </div>
 
-            {/* thumbnails */}
+            {/* Thumbnails */}
             <div className="flex gap-4 mt-5">
               {SelectedProduct.images.map((img, index) => (
                 <img
                   key={index}
                   src={img}
+                  alt="thumbnail"
                   onClick={() => changeImage(img)}
                   className={`w-24 h-24 object-cover rounded-lg cursor-pointer border-2 transition ${
                     activeImage === img
@@ -96,7 +116,6 @@ export const ProductPageNameplates = () => {
 
           {/* RIGHT CONTENT */}
           <div>
-
             <h1 className="text-4xl font-semibold mb-6 text-gpsfdk-gold">
               {SelectedProduct.name}
             </h1>
@@ -143,8 +162,10 @@ export const ProductPageNameplates = () => {
               ))}
             </div>
 
-            {/* INPUT */}
+            {/* NAME INPUT */}
             <input
+              value={customName}
+              onChange={(e) => setCustomName(e.target.value)}
               placeholder="Enter your name"
               className="w-full bg-transparent border border-gray-600 rounded-full px-6 py-3 mb-6 outline-none focus:border-gpsfdk-orange"
             />
@@ -175,8 +196,12 @@ export const ProductPageNameplates = () => {
                 </button>
               </div>
 
-              <button className="flex-1 bg-gpsfdk-orange hover:opacity-90 transition rounded-full py-3 font-semibold">
-                ADD TO CART
+              <button
+                onClick={handleAddToCart}
+                disabled={isAdding}
+                className="flex-1 bg-gpsfdk-orange hover:opacity-90 transition rounded-full py-3 font-semibold disabled:opacity-50"
+              >
+                {isAdding ? "ADDING..." : "ADD TO CART"}
               </button>
             </div>
 
