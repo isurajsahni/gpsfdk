@@ -154,9 +154,9 @@ const WallCanvaSlider = () => {
   };
 
   return (
-    <section className="bg-black py-20 px-4 border-t border-gpsfdk-gold">
+    <section className="bg-[#F8F5F0] py-20 px-4 ">
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-6 flex-wrap">
-        <p className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold">Wall Canvas</p>
+        <p className="text-3xl md:text-5xl text-black font-semibold">Wall Canvas</p>
 
         <button className="hidden sm:block group items-center gap-2 px-12 py-3 rounded-md bg-gradient-to-r from-gpsfdk-green to-gpsfdk-orange text-white font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105">
           View All <span className="text-lg transition-transform group-hover:translate-x-1">›</span>

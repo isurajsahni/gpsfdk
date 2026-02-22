@@ -154,7 +154,7 @@ const HouseNamePlates = () => {
   };
 
   return (
-    <section className="bg-black py-20 px-4 border-t border-gpsfdk-gold">
+    <section className=" py-20 px-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-6 flex-wrap">
         <p className="text-3xl md:text-5xl text-gpsfdk-gold font-semibold">House Nameplates</p>
 

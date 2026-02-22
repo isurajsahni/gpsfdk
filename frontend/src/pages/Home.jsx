@@ -7,8 +7,8 @@ import HouseNamePlates from '../components/products/HouseNamePlates'
 import { WhoWeAre } from '../components/layout/WhoWeAre'
 import TestimonialVideo from '../components/layout/TestimonialVideo'
 import { WatchSection } from '../components/layout/WatchSection'
-import { ProductPage } from '../components/products/ProductPage'
-import { ProductPageNameplates } from '../components/products/ProductPageNameplates'
+import { ProductDetailPageCanvas } from '../components/products/ProductDetailPageCanvas'
+import { ProductDetailPageNameplates } from '../components/products/ProductDetailPageNameplates'
 
 export const Home = () => {
   return (
@@ -21,8 +21,8 @@ export const Home = () => {
       <WatchSection />
       <WhoWeAre />
       <TestimonialVideo />
-      <ProductPage />
-      <ProductPageNameplates />
+      <ProductDetailPageCanvas />
+      <ProductDetailPageNameplates />
     </div>
   )
 }

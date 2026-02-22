@@ -1,16 +1,41 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import HouseNamePlates from './HouseNamePlates';
 
-export const ProductPageNameplates = () => {
-  const SelectedProduct = {
-    name: "Lord Ganesha",
-    images: [
-      "https://picsum.photos/900/700?random=101",
-      "https://picsum.photos/900/700?random=102",
-      "https://picsum.photos/900/700?random=103",
+export const ProductDetailPageNameplates = () => {
+ const SelectedProduct = {
+  name: "Lord Ganesha",
+  images: [
+    "https://picsum.photos/900/700?random=101",
+    "https://picsum.photos/900/700?random=102",
+    "https://picsum.photos/900/700?random=103",
+  ],
+  description: {
+    intro: {
+      title: "Affordable Elegance, Built To Last",
+      content:
+        "Bring home style and durability at an affordable price! Our Value-Packed Vinyl Nameplates reflect our belief that everyone has the Right To Luxury, offering a sleek, elegant look without compromise.",
+    },
+    highlights: [
+      "Premium house nameplate at an affordable price – designed for every home.",
+      "Built on a durable acrylic base with a matte vinyl finish for a smooth, elegant look.",
+      "Weather-resistant and long-lasting – perfect for outdoor use.",
+      "Lightweight yet sturdy, making it easy to install.",
+      "Perfect for those searching for custom vinyl nameplates that combine luxury and value.",
     ],
-  };
+    included: [
+      "1 × Value-Packed Vinyl Nameplate",
+      "1 × Hanging Kit For Easy Installation",
+      "1 × GPS Family Certificate",
+    ],
+    care: [
+      "Clean directly using a soft damp cloth.",
+      "Avoid washing or rinsing with water.",
+      "Do not use harsh chemicals; simply wipe gently for a long-lasting finish.",
+    ],
+  },
+};
 
   /* IMAGE SWITCH */
   const [activeImage, setActiveImage] = useState(
@@ -55,7 +80,7 @@ export const ProductPageNameplates = () => {
 
   const handleAddToCart = () => {
     if (!customName.trim()) {
-      toast.error("Please enter your name", { duration: 3000 });
+      toast.error("Please enter your name", { duration: 1000 });
       return;
     }
 
@@ -63,7 +88,7 @@ export const ProductPageNameplates = () => {
 
     // Simulate API/cart call
     setTimeout(() => {
-      toast.success("Added to cart!", { duration: 3000 });
+      toast.success("Added to cart!", { duration: 1000 });
       setIsAdding(false);
     }, 600);
   };
@@ -213,6 +238,61 @@ export const ProductPageNameplates = () => {
           </div>
         </div>
       </div>
+    <div className="max-w-7xl mx-auto py-16">
+  <h3 className="text-2xl font-semibold mt-16 mb-4 text-gpsfdk-gold">
+    Product Description
+  </h3>
+
+  <div className="text-gray-300 leading-relaxed max-w-3xl space-y-6">
+
+    {/* Intro */}
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-2">
+        {SelectedProduct.description.intro.title}
+      </h4>
+      <p>
+        {SelectedProduct.description.intro.content}
+      </p>
+    </div>
+
+    {/* Highlights */}
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-3">
+        Product Highlights
+      </h4>
+      <ul className="space-y-2 list-disc list-inside marker:text-gpsfdk-orange">
+        {SelectedProduct.description.highlights.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Included */}
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-3">
+        What’s Included In The Box
+      </h4>
+      <ul className="space-y-2 list-disc list-inside marker:text-gpsfdk-green">
+        {SelectedProduct.description.included.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Care */}
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-3">
+        Care & Handling
+      </h4>
+      <ul className="space-y-2 list-disc list-inside marker:text-red-400">
+        {SelectedProduct.description.care.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</div>
     </section>
   );
 };
